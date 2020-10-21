@@ -236,3 +236,7 @@ declare module "react-native-render-html/src/HTMLUtils" {
    */
   const IGNORED_TAGS: string[];
 }
+
+declare module "react-native-render-html/src/HTMLRenderers" {
+  function img (htmlAttribs: any, children: any, convertedCSSStyles: any, key: any): false | JSX.Element;
+}
