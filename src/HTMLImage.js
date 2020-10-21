@@ -59,6 +59,14 @@ export default class HTMLImage extends PureComponent {
                 if (!width && styles['width']) {
                     styleWidth = styles['width'];
                 }
+                if (!width && styles['maxWidth'] <= 100) {
+                    styleWidth = styles['maxWidth'];
+                    if (styles['maxHeight']) {
+                        styleHeight = styles['maxHeight']
+                    } else {
+                        styleHeight = styles['maxWidth'];
+                    }
+                }
                 if (!height && styles['height']) {
                     styleHeight = styles['height'];
                 }
@@ -66,6 +74,14 @@ export default class HTMLImage extends PureComponent {
         } else {
             if (!width && style['width']) {
                 styleWidth = style['width'];
+            }
+            if (!width && style['maxWidth'] <= 100) {
+                styleWidth = style['maxWidth'];
+                if (style['maxHeight']) {
+                    styleHeight = style['maxHeight']
+                } else {
+                    styleHeight = style['maxWidth'];
+                }
             }
             if (!height && style['height']) {
                 styleHeight = style['height'];
